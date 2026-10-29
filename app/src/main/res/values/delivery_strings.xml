@@ -1,0 +1,10 @@
+<resources>
+    <string name="delivery_brand">FoodNow Delivery</string>
+    <string name="delivery_login_title">Đăng nhập tài xế</string>
+    <string name="delivery_login_hint">Xem đơn đang giao, trao đổi với khách và chia sẻ vị trí giao hàng.</string>
+    <string name="delivery_email">Email tài xế được cấp</string>
+    <string name="delivery_password">Mật khẩu</string>
+    <string name="delivery_login_action">Vào giao diện giao hàng</string>
+    <string name="delivery_access_note">Tài khoản tài xế do quản trị viên cấp. Tài khoản khách và quản trị không đăng nhập tại đây.</string>
+    <string name="customer_login_back">Về đăng nhập khách hàng</string>
+</resources>

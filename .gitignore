@@ -1,0 +1,24 @@
+# Secrets and local configuration
+backend/service-account.json
+backend/firestore-credentials.path
+backend/data/admin-credentials.txt
+services.properties
+local.properties
+app/google-services.json
+
+# Local data, backups and build artifacts
+backend/data/*.db
+backend/data/*.db-*
+backend/data/
+backend/backups/
+backend/.venv/
+**/__pycache__/
+**/build/
+.gradle/
+.idea/
+reports/Bao_cao_FoodNow_Kieu_Huu_Thinh_523H0180.docx
+reports/screenshots/0*.png
+reports/screenshots/1*.png
+reports/screenshots/2[0-5]_*.png
+reports/screenshots/delivery_*.png
+reports/~$*.docx

@@ -1,0 +1,15 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:orientation="vertical" android:padding="20dp" android:background="@drawable/bg_card">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ĐANG GIAO" android:textSize="11sp" android:textStyle="bold" android:textColor="@color/green" android:background="@drawable/bg_soft" android:paddingHorizontal="10dp" android:paddingVertical="6dp" />
+    <TextView android:id="@+id/deliveryOrderTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:textSize="20sp" android:textStyle="bold" android:textColor="@color/ink" />
+    <TextView android:id="@+id/deliveryOrderId" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textSize="12sp" android:textColor="@color/muted" />
+    <TextView android:id="@+id/deliveryRecipient" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:textSize="16sp" android:textStyle="bold" android:textColor="@color/ink" />
+    <TextView android:id="@+id/deliveryAddress" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textSize="15sp" android:lineSpacingExtra="3dp" android:textColor="@color/muted" />
+    <TextView android:id="@+id/deliveryTotal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:textSize="16sp" android:textColor="@color/green" android:textStyle="bold" />
+    <com.google.android.material.button.MaterialButton android:id="@+id/shareDeliveryLocation" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Chia sẻ vị trí hiện tại" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton android:id="@+id/deliveryMapButton" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Bản đồ" />
+        <Space android:layout_width="10dp" android:layout_height="1dp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/deliveryChatButton" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Nhắn tin" />
+    </LinearLayout>
+    <com.google.android.material.button.MaterialButton android:id="@+id/deliveryDetailsButton" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Xem chi tiết đơn hàng" />
+</LinearLayout>

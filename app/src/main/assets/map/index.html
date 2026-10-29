@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="leaflet.css"><style>
+html,body,#map{height:100%;margin:0}body{font-family:Arial,sans-serif}#status{position:absolute;top:12px;left:55px;right:12px;z-index:1000;background:white;padding:10px;border-radius:8px;box-shadow:0 2px 8px #0003;font-size:13px;pointer-events:none}.pin{background:#137451;border:3px solid white;border-radius:50%;box-shadow:0 2px 8px #0008}.leaflet-control-attribution{font-size:11px!important}
+</style></head><body><div id="map" aria-label="Bản đồ chọn điểm giao hàng"></div><div id="status">Chạm bản đồ để chọn điểm giao hàng</div><script src="leaflet.js"></script><script>
+'use strict';
+const values=location.hash.slice(1).split(','), lat=Number(values[0]),lng=Number(values[1]);
+const hasPin=values.length>=2&&Number.isFinite(lat)&&Number.isFinite(lng)&&Math.abs(lat)<=90&&Math.abs(lng)<=180;
+const readonly=values[2]==='read';
+const map=L.map('map').setView(hasPin?[lat,lng]:[10.7769,106.7009],hasPin?17:13);
+let marker=null,loaded=false;
+const status=document.getElementById('status');
+const tiles=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+tiles.on('tileload',()=>{if(!loaded){loaded=true;status.textContent=readonly?'Điểm giao hàng đã lưu':hasPin?'Kéo ghim hoặc chạm để đổi điểm giao':'Chạm bản đồ để chọn điểm giao hàng';}});
+tiles.on('tileerror',()=>{status.textContent='Không tải được bản đồ. Kiểm tra Internet hoặc thử mở lại.';});
+function select(latitude,longitude,notify){
+ if(!Number.isFinite(latitude)||!Number.isFinite(longitude)||Math.abs(latitude)>90||Math.abs(longitude)>180)return;
+ if(!marker){marker=L.marker([latitude,longitude],{draggable:!readonly,icon:L.divIcon({className:'pin',iconSize:[22,22],iconAnchor:[11,11]})}).addTo(map);marker.on('dragend',()=>{const p=marker.getLatLng().wrap();select(p.lat,p.lng,true);});}
+ marker.setLatLng([latitude,longitude]);
+ status.textContent=latitude.toFixed(6)+', '+longitude.toFixed(6)+(readonly?'':' · Kéo ghim để chỉnh');
+ if(notify)location.href='foodnow-pin://selected?lat='+latitude+'&lng='+longitude;
+}
+if(hasPin)select(lat,lng,false);
+map.on('click',e=>{if(!readonly&&loaded){const p=e.latlng.wrap();select(p.lat,p.lng,true);}});
+window.centerAt=(latitude,longitude)=>{map.setView([latitude,longitude],17);status.textContent='Chạm vị trí chính xác trên bản đồ để đặt ghim';};
+window.setPoint=(latitude,longitude)=>{select(latitude,longitude,false);map.setView([latitude,longitude],17);};
+let driver=null;
+window.driverAt=(latitude,longitude)=>{if(!driver){driver=L.circleMarker([latitude,longitude],{radius:10,color:'#1565c0',fillOpacity:1}).addTo(map).bindTooltip('Người giao hàng');map.panTo([latitude,longitude]);}else driver.setLatLng([latitude,longitude]);};
+</script></body></html>

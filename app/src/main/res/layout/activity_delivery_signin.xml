@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:background="@color/surface">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="28dp" android:gravity="center_vertical">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/delivery_brand" android:textColor="@color/green" android:textSize="32sp" android:textStyle="bold" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/delivery_login_title" android:textSize="24sp" android:textStyle="bold" android:textColor="@color/ink" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:layout_marginBottom="28dp" android:text="@string/delivery_login_hint" android:textSize="15sp" android:textColor="@color/ink" />
+        <EditText android:id="@+id/deliveryEmail" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="56dp" android:padding="14dp" android:hint="@string/delivery_email" android:inputType="textEmailAddress" android:autofillHints="emailAddress" android:singleLine="true" />
+        <EditText android:id="@+id/deliveryPassword" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:minHeight="56dp" android:padding="14dp" android:hint="@string/delivery_password" android:inputType="textPassword" android:autofillHints="password" android:singleLine="true" />
+        <Button android:id="@+id/deliveryLogin" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/delivery_login_action" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/delivery_access_note" android:textSize="13sp" android:textColor="@color/ink" />
+        <Button android:id="@+id/customerLogin" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/customer_login_back" android:textColor="@color/green" android:backgroundTint="@android:color/white" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

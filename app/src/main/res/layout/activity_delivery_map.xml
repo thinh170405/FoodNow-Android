@@ -1,0 +1,13 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+    <com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="56dp" app:title="Điểm giao hàng" app:navigationIcon="@drawable/ic_back" />
+    <LinearLayout android:id="@+id/mapSearchRow" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingHorizontal="12dp">
+        <EditText android:id="@+id/mapSearch" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="48dp" android:hint="Địa chỉ, quận, thành phố" android:inputType="textPostalAddress" android:maxLines="1" android:imeOptions="actionSearch" android:importantForAutofill="no"  android:layout_marginBottom="10dp" />
+        <Button android:id="@+id/mapSearchButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tìm" />
+    </LinearLayout>
+    <Button android:id="@+id/useGps" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Dùng vị trí hiện tại" />
+    <FrameLayout android:id="@+id/mapContainer" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <WebView android:id="@+id/deliveryMap" android:layout_width="match_parent" android:layout_height="match_parent" />
+    </FrameLayout>
+    <TextView android:id="@+id/mapHint" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" android:text="Chạm bản đồ để đặt ghim. Cần Internet để tải bản đồ." />
+    <Button android:id="@+id/mapConfirm" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginHorizontal="12dp" android:text="Dùng điểm giao hàng này" android:minHeight="48dp" android:enabled="false" />
+</LinearLayout>

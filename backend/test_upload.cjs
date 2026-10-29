@@ -1,0 +1,24 @@
+const {chromium}=require('playwright');const assert=require('node:assert/strict');const path=require('node:path');
+(async()=>{const browser=await chromium.launch({headless:true,channel:'msedge'});try{
+ const page=await browser.newPage({viewport:{width:1200,height:950}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('http://127.0.0.1:8081');
+ await page.getByLabel('Email',{exact:true}).fill('admin@test.local');await page.getByLabel('Mật khẩu',{exact:true}).fill('Admin12345');await page.getByRole('button',{name:'Đăng nhập quản trị'}).click();
+ await page.locator('#dashboard').waitFor({state:'visible'});await page.getByRole('button',{name:'Thực đơn & nhà hàng',exact:true}).click();await page.getByRole('button',{name:'+ Món ăn',exact:true}).click();
+ const name='Upload QA '+Date.now();await page.getByLabel('Tên',{exact:true}).fill(name);
+ await page.locator('input[type=file]').setInputFiles(path.resolve(__dirname,'../img/ic_banh_mi.png'));
+ await page.waitForFunction(()=>document.querySelector('.image-preview')?.src.startsWith('data:'));
+ await page.screenshot({path:path.join(__dirname,'data','upload-preview.png'),fullPage:true});
+ await page.getByRole('button',{name:'Lưu thay đổi',exact:true}).click();
+ let row=page.getByRole('row').filter({hasText:name});await row.waitFor();
+ const first=await row.locator('img').getAttribute('src');assert.match(first,/^\/uploads\/upload_[a-f0-9]{64}\.jpg$/);
+ await row.locator('img').evaluate(image=>image.decode());
+ assert.equal((await page.request.get('http://127.0.0.1:8081'+first)).status(),200);
+ await row.getByRole('button',{name:'Chỉnh sửa'}).click();await page.locator('input[type=file]').setInputFiles(path.resolve(__dirname,'../img/ic_milk_tea.png'));
+ await page.waitForFunction(()=>document.querySelector('.image-preview')?.src.startsWith('data:'));
+ await page.getByRole('button',{name:'Lưu thay đổi',exact:true}).click();await page.locator('#editor').waitFor({state:'hidden'});
+ await page.waitForFunction(({name,first})=>[...document.querySelectorAll('tr')].some(r=>r.textContent.includes(name)&&r.querySelector('img')?.getAttribute('src')!==first),{name,first});
+ const second=await row.locator('img').getAttribute('src');assert.notEqual(first,second);
+ await row.getByRole('button',{name:'Chỉnh sửa'}).click();await page.getByRole('button',{name:'Lưu thay đổi',exact:true}).click();await page.locator('#editor').waitFor({state:'hidden'});assert.equal(await row.locator('img').getAttribute('src'),second);
+ const catalog=await (await page.request.get('http://127.0.0.1:8081/api/catalog')).json();assert.ok(catalog.restaurants.flatMap(r=>r.menu).find(f=>f.name===name).image.startsWith('upload_'));
+ assert.deepEqual(errors,[]);console.log('PASS: choose file, preview, create food, replace image, retain unchanged image, serve JPEG, catalog for Android.');
+}finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

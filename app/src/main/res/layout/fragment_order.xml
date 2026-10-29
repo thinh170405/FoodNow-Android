@@ -1,0 +1,7 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="24dp">
+  <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/ui_label_33" android:textSize="24sp" android:textColor="@color/ink" android:textStyle="bold" android:layout_marginBottom="20dp" />
+  <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+    <TextView android:id="@+id/tvOrder" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingBottom="16dp" android:textSize="16sp" android:textColor="@color/ink" />
+  </androidx.core.widget.NestedScrollView>
+  <Button android:id="@+id/btnCancel" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/ui_label_34" android:textAllCaps="false" android:textColor="@android:color/white" android:backgroundTint="@color/green" />
+</LinearLayout>

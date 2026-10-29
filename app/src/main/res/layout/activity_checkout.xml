@@ -1,0 +1,157 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+  <com.google.android.material.appbar.MaterialToolbar
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="56dp"
+      app:navigationIcon="@drawable/ic_back"
+      app:title="Thanh toán" />
+
+  <androidx.core.widget.NestedScrollView
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+      <TextView
+          android:id="@+id/tvSummary"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textColor="@color/ink"
+          android:textSize="16sp" />
+
+      <EditText
+          android:id="@+id/txtRecipient"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="10dp"
+          android:autofillHints="name"
+          android:hint="@string/ui_label_10"
+          android:inputType="textPersonName"
+          android:minHeight="56dp" />
+
+      <EditText
+          android:id="@+id/txtPhone"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="10dp"
+          android:autofillHints="phone"
+          android:hint="@string/ui_label_11"
+          android:inputType="phone"
+          android:minHeight="56dp" />
+
+      <EditText
+          android:id="@+id/txtAddress"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="10dp"
+          android:autofillHints="postalAddress"
+          android:hint="@string/ui_label_12"
+          android:inputType="textPostalAddress|textMultiLine"
+          android:minHeight="56dp" />
+
+      <Button
+          android:id="@+id/chooseDeliveryPoint"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Chọn điểm giao trên bản đồ" />
+
+      <TextView
+          android:id="@+id/deliveryPointLabel"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Chưa ghim vị trí (không bắt buộc). Vẫn cần nhập số nhà/địa chỉ ở trên." />
+
+      <Button
+          android:id="@+id/clearDeliveryPoint"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Bỏ điểm đã chọn"
+          android:visibility="gone" />
+
+      <EditText
+          android:id="@+id/txtNote"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="10dp"
+          android:hint="@string/ui_label_13"
+          android:importantForAutofill="no"
+          android:inputType="textMultiLine"
+          android:minHeight="56dp" />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
+          android:text="@string/ui_label_14"
+          android:textSize="18sp"
+          android:textStyle="bold" />
+
+      <RadioGroup
+          android:id="@+id/paymentMethod"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:checkedButton="@id/payCash">
+
+        <RadioButton
+            android:id="@+id/payCash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/ui_label_15" />
+
+        <RadioButton
+            android:id="@+id/payWallet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/ui_label_16" />
+
+        <RadioButton
+            android:id="@+id/payBank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/ui_label_17" />
+      </RadioGroup>
+
+      <TextView
+          android:id="@+id/tvPaymentTotal"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
+          android:textColor="@color/ink"
+          android:textSize="18sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="12dp"
+          android:text="@string/ui_label_18"
+          android:textSize="13sp" />
+    </LinearLayout>
+  </androidx.core.widget.NestedScrollView>
+
+  <Button
+      android:id="@+id/btnConfirmPayment"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp"
+      android:backgroundTint="@color/green"
+      android:minHeight="52dp"
+      android:text="@string/ui_label_19"
+      android:textAllCaps="false"
+      android:textColor="@android:color/white" />
+</LinearLayout>

@@ -1,0 +1,36 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/surface">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:paddingHorizontal="24dp" android:paddingVertical="12dp">
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="FoodNow" android:textSize="24sp" android:textStyle="bold" android:textColor="@color/green" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ĐỐI TÁC GIAO HÀNG" android:textSize="11sp" android:letterSpacing="0.12" android:textColor="@color/muted" />
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton android:id="@+id/deliveryExit" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Đăng xuất" android:textColor="@color/muted" />
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
+            <TextView android:id="@+id/deliveryGreeting" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Chào bạn!" android:textSize="16sp" android:textColor="@color/muted" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/deliveryChangePassword" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Đổi mật khẩu" android:textColor="@color/green" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:layout_marginBottom="20dp" android:text="Hành trình hôm nay" android:textSize="28sp" android:textStyle="bold" android:textColor="@color/ink" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="22dp" android:gravity="center_vertical" android:background="@drawable/bg_basket">
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ĐƠN ĐANG GIAO" android:textSize="12sp" android:letterSpacing="0.08" android:textColor="@android:color/white" />
+                    <TextView android:id="@+id/deliveryCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="—" android:textSize="44sp" android:textStyle="bold" android:textColor="@android:color/white" />
+                </LinearLayout>
+                <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="Giao đúng hẹn.\nTrao trọn niềm vui." android:textSize="15sp" android:lineSpacingExtra="4dp" android:textColor="@android:color/white" />
+            </LinearLayout>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:padding="14dp" android:background="@drawable/bg_soft" android:text="Vị trí chỉ được gửi khi bạn bấm chia sẻ và đang mở màn hình này." android:textSize="13sp" android:textColor="@color/green" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:gravity="center_vertical" android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Danh sách giao hàng" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/ink" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/deliveryRefresh" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cập nhật" android:textColor="@color/green" />
+            </LinearLayout>
+            <ProgressBar android:id="@+id/deliveryProgress" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="4dp" android:indeterminate="true" android:visibility="gone" />
+            <TextView android:id="@+id/deliveryError" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="12dp" android:textColor="@color/ink" android:visibility="gone" />
+            <LinearLayout android:id="@+id/deliveryEmpty" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="vertical" android:gravity="center" android:padding="28dp" android:background="@drawable/bg_card" android:visibility="gone">
+                <ImageView android:layout_width="64dp" android:layout_height="64dp" android:padding="14dp" android:background="@drawable/bg_soft" android:src="@drawable/icon_order" android:contentDescription="@null" android:importantForAccessibility="no" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="Bạn đã sẵn sàng!" android:gravity="center" android:textSize="21sp" android:textStyle="bold" android:textColor="@color/ink" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Chưa có đơn đang giao.\nCác đơn được chuyển sang trạng thái đang giao sẽ xuất hiện tại đây." android:gravity="center" android:textSize="14sp" android:lineSpacingExtra="4dp" android:textColor="@color/muted" />
+            </LinearLayout>
+            <LinearLayout android:id="@+id/deliveryOrders" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

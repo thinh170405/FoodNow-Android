@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FoodNow • Quản trị</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<div class="student-signature">523H0180 · Kiều Hữu Thịnh</div>
+<div id="notice" role="alert" hidden></div>
+<section id="loginPage" class="login-page">
+  <div class="welcome"><span class="badge">FOODNOW / OPERATIONS</span><h1>Mỗi đơn hàng.<br>Một trải nghiệm tốt hơn.</h1><p>Quản lý nhà hàng, thực đơn và đơn giao hàng từ một nơi. Dữ liệu kết nối trực tiếp với ứng dụng Android.</p><div class="welcome-foot">Android ↔ REST API ↔ Firestore ↔ Web</div></div>
+  <form id="loginForm" class="login-card"><span class="brand">FoodNow<span>●</span></span><h2>Chào mừng trở lại</h2><p>Đăng nhập bằng tài khoản quản trị của hệ thống.</p><label>Email<input name="email" type="email" autocomplete="username" required></label><label>Mật khẩu<input name="password" type="password" autocomplete="current-password" required></label><button class="primary" type="submit">Đăng nhập quản trị →</button><small>Tài khoản quản trị đầu tiên nằm trong tệp <code>backend/data/admin-credentials.txt</code> trên máy chạy server.</small></form>
+</section>
+<div id="dashboard" class="dashboard" hidden>
+ <aside><span class="brand">FoodNow<span>●</span></span><p class="muted">TRUNG TÂM QUẢN TRỊ</p><nav><button data-page="orders" class="selected">Đơn hàng</button><button data-page="catalog">Thực đơn & nhà hàng</button><button data-page="users">Khách hàng</button></nav><div class="aside-bottom"><span id="adminName"></span><button id="passwordButton" class="ghost">Đổi mật khẩu</button><button id="logoutButton" class="ghost">Đăng xuất</button></div></aside>
+ <main><header><div><span class="eyebrow">TỔNG QUAN HOẠT ĐỘNG</span><h1 id="pageTitle">Đơn hàng</h1></div><button id="refreshButton" class="secondary">↻ Tải lại dữ liệu</button></header>
+ <section id="stats" class="stats"></section>
+ <section class="panel"><div class="panel-header"><div><h2 id="sectionTitle">Đơn hàng mới nhất</h2><p id="sectionSubtitle">Quản lý toàn bộ vòng đời đơn hàng.</p></div><div id="catalogActions" hidden><button id="addRestaurant" class="secondary">+ Nhà hàng</button><button id="addFood" class="primary">+ Món ăn</button></div><div id="driverActions" hidden><button id="addDriver" class="primary">+ Tạo tài khoản tài xế</button></div></div>
+ <div class="filters"><input id="search" placeholder="Tìm tên, email, mã đơn…" aria-label="Tìm kiếm"><select id="statusFilter" aria-label="Trạng thái đơn"><option value="">Tất cả trạng thái</option value="pending">Chờ xác nhận</option><option value="confirmed">Đã xác nhận</option><option value="delivering">Đang giao</option><option value="completed">Hoàn thành</option><option value="cancelled">Đã hủy</option></select></div><div id="content"></div></section>
+ <footer>FoodNow · Cơ sở dữ liệu dùng chung với Android. Các phương thức ví/chuyển khoản là mô phỏng.</footer></main>
+</div>
+<dialog id="editor"><form id="editorForm"><div class="dialog-heading"><h2 id="editorTitle"></h2><button id="closeEditor" type="button" class="ghost" aria-label="Đóng">✕</button></div><div id="editorFields"></div><p id="editorError" role="alert"></p><button type="submit" class="primary">Lưu thay đổi</button><p class="dialog-signature">523H0180 · Kiều Hữu Thịnh</p></form></dialog>
+<script src="/app.js"></script></body></html>

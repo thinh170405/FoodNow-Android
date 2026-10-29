@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+    <com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="56dp" app:title="Tin nhắn đơn hàng" app:navigationIcon="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/chatStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:text="Trao đổi với người phụ trách đơn hàng" />
+
+    <ScrollView android:id="@+id/chatScroll" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/chatMessages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp" />
+    </ScrollView>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" android:orientation="horizontal">
+        <EditText android:id="@+id/chatInput" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="48dp" android:maxLength="2000" android:maxLines="4" android:inputType="textMultiLine|textCapSentences" android:hint="Nhập tin nhắn" android:importantForAutofill="no"  android:layout_marginBottom="10dp" />
+        <Button android:id="@+id/chatSend" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gửi" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,8 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="112dp" android:gravity="center_vertical" android:background="@drawable/bg_card_touch" android:layout_marginBottom="12dp" android:padding="14dp">
+  <ImageView android:layout_width="72dp" android:layout_height="80dp" android:src="@drawable/ic_black_coffee" android:contentDescription="@null" android:id="@+id/ivImage" android:scaleType="fitCenter" android:padding="6dp" android:background="@drawable/bg_soft" />
+  <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="16dp" android:orientation="vertical">
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/ui_label_38" android:textSize="16sp" android:textColor="@color/ink" android:id="@+id/tvName" android:textStyle="bold" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/ui_label_39" android:textSize="14sp" android:textColor="@color/ink" android:id="@+id/tvPrice" android:textStyle="bold" android:layout_marginTop="6dp" />
+  </LinearLayout>
+  <TextView android:id="@+id/tvQuantity" android:background="@drawable/bg_soft" android:layout_marginStart="8dp" android:layout_width="48dp" android:layout_height="48dp" android:gravity="center" android:text="@string/ui_label_40" android:textSize="20sp" android:textColor="@color/green" />
+</LinearLayout>
