@@ -17,8 +17,11 @@ backend/.venv/
 .gradle/
 .idea/
 reports/Bao_cao_FoodNow_Kieu_Huu_Thinh_523H0180.docx
+reports/FoodNow_Bao_Cao_Tat_Ca_Man_Hinh_523H0180_Kieu_Huu_Thinh.docx
+reports/FoodNow_Bao_Cao_Man_Hinh_Firestore_523H0180.docx
 reports/screenshots/0*.png
 reports/screenshots/1*.png
 reports/screenshots/2[0-5]_*.png
 reports/screenshots/delivery_*.png
 reports/~$*.docx
+reports/work/

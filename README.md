@@ -1,6 +1,6 @@
 # FoodNow — Android + API + Cloud Firestore + web quản trị
 
-Mã nguồn: [GitHub FoodNow Android](https://github.com/thinh170405/FoodNow-Android). Báo cáo có ảnh Cloud Firestore: [FoodNow_Bao_Cao_Man_Hinh_Firestore_523H0180.docx](reports/FoodNow_Bao_Cao_Man_Hinh_Firestore_523H0180.docx).
+Mã nguồn: [GitHub FoodNow Android](https://github.com/thinh170405/FoodNow-Android). Báo cáo tổng quan: [523H0180_foodnow.docx](reports/523H0180_foodnow.docx).
 
 ## Cấu trúc project
 

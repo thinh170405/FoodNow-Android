@@ -12,10 +12,8 @@
 - [Đề bài FoodNow](reference/Đề%20Bài/1.png)
 - [Tài liệu Google Play Service và Maps của môn học](reference/Lab10_Huong%20dan.pdf)
 
-## Báo cáo giao diện
+## Báo cáo tổng quan
 
-- [Báo cáo tất cả màn hình FoodNow](../reports/FoodNow_Bao_Cao_Tat_Ca_Man_Hinh_523H0180_Kieu_Huu_Thinh.docx)
-- [Báo cáo cập nhật với ảnh Cloud Firestore và link GitHub](../reports/FoodNow_Bao_Cao_Man_Hinh_Firestore_523H0180.docx)
-- [Báo cáo FoodNow](../reports/Bao_cao_FoodNow_Kieu_Huu_Thinh_523H0180.docx)
+- [523H0180_foodnow.docx](../reports/523H0180_foodnow.docx)
 
 Ảnh chụp phục vụ báo cáo nằm trong [`reports/screenshots`](../reports/screenshots).
